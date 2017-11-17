@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TouchTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="DrawView" customModule="TouchTracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lineThickness">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vjp-Ic-c6Q" appends="YES" id="fGh-Th-tTl"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="threeTouchSwipe" destination="vjp-Ic-c6Q" id="Bye-Ow-uAh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="up" numberOfTouchesRequired="3" id="vjp-Ic-c6Q">
+                    <connections>
+                        <segue destination="QC9-jc-bcN" kind="presentation" id="q5R-fd-ByO"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="121" y="99"/>
+        </scene>
+        <!--Color Pane View Controller-->
+        <scene sceneID="nwO-X1-ZkB">
+            <objects>
+                <viewController id="QC9-jc-bcN" customClass="ColorPaneViewController" customModule="TouchTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LHt-1n-fNB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ngK-ep-vFi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mot-7Q-LOm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deV-xW-ACh">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="215.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="dae-VE-GdS"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="pPg-1s-hhM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXB-pH-sVr">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="215.5"/>
+                                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="yKw-Al-4rz"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="wnq-v7-1K7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdl-ee-ybC">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="215.5"/>
+                                                <color key="backgroundColor" red="0.39249836452860876" green="0.86883328045685282" blue="0.82047801467096282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="nEI-Hp-8wu"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="Bwl-kw-XJL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-ZB-fXg">
+                                        <rect key="frame" x="0.0" y="215.5" width="375" height="216"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N00-d4-2lx">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="216"/>
+                                                <color key="backgroundColor" red="0.82792215072096564" green="0.86883328049999997" blue="0.67806311989275214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="EbS-lg-9DL"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="uVY-Tn-RkX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGB-7X-3LB">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="216"/>
+                                                <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="xee-SK-y49"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="2t8-rw-nEZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmG-pN-IC2">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="216"/>
+                                                <color key="backgroundColor" red="0.86883328049999997" green="0.41362508918415447" blue="0.28920263284476372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="pBi-sX-13b"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="bfX-uq-Dj6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="e4O-1W-9l5">
+                                        <rect key="frame" x="0.0" y="431.5" width="375" height="215.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bl-q2-eTh">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="215.5"/>
+                                                <color key="backgroundColor" red="0.47600565781010706" green="0.86883328049999997" blue="0.42021615268203066" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="Tbl-SJ-ern"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="RLP-sZ-f87"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vya-ym-Nd9">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="215.5"/>
+                                                <color key="backgroundColor" red="0.50488503687318365" green="0.56166646316170554" blue="0.86883328049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="cbd-rN-t4y"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="puX-jy-hfC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-sx-C3x">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="215.5"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeSelectedColor:" destination="QC9-jc-bcN" eventType="touchUpInside" id="5c1-a6-RhK"/>
+                                                    <segue destination="m27-Pq-fcH" kind="unwind" unwindAction="selectColorWithSegue:" id="324-iT-8Ns"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ngK-ep-vFi" firstAttribute="leading" secondItem="tQf-Iy-uMO" secondAttribute="leading" id="8Zn-uJ-MLl"/>
+                            <constraint firstItem="ngK-ep-vFi" firstAttribute="top" secondItem="tQf-Iy-uMO" secondAttribute="top" id="BtD-CV-I7f"/>
+                            <constraint firstItem="tQf-Iy-uMO" firstAttribute="trailing" secondItem="ngK-ep-vFi" secondAttribute="trailing" id="mpI-eC-hVE"/>
+                            <constraint firstItem="tQf-Iy-uMO" firstAttribute="bottom" secondItem="ngK-ep-vFi" secondAttribute="bottom" id="z6y-RC-Z1N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tQf-Iy-uMO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUP-Kg-Ma6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m27-Pq-fcH" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="968.79999999999995" y="99.400299850074973"/>
+        </scene>
+    </scenes>
+</document>
